@@ -12,9 +12,7 @@
   - name: start docker
     service: name=docker state=started
   - name: install git
-    yum: name=git state=present
-  - name: get repo
-    git: repo=https://github.com/swaminathdhavane/finalproject dest=/tmp/gitrepo
+    yum: name=git state=present 
   - name: Build Dockerfile
     command: chdir=/tmp/gitrepo docker build  -t phpapp:v1 .
   - name: run Image
