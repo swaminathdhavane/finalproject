@@ -14,6 +14,6 @@
   - name: install git
     yum: name=git state=present 
   - name: Build Dockerfile
-    command: chdir=/tmp/gitrepo docker build  -t phpapp:v1 .
+    command:  docker build  -t phpapp:v1 .
   - name: run Image
     command: docker run -itd -p 8083:80 phpapp:v1
